@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int x;
+    
+    int y;
+    
+    int password;
+    
+    cout << "welcom to de 2 number fuserenator 9000, dis is onli reserved to vip membirs who paid mi 42 cents in bitcon to access this software, so to proceed plis enter password: ";
+    
+    cout << " anyways wat is ur password?: " ;
+    
+    cin >> password;
+    
+    if (password == 4)
+    {
+    cout << " ok u can use my expensive software, what 2 number u wan fuze? " ;
+    
+    cin >> x;
+    
+    cout << "ok ur first number u want fuse is  (" << x << ")" << endl;
+    
+    cin >> y;
+    
+    cout << "ok ur second number u want fuse is  (" << y <<")" <<  endl;
+    
+    cout << "ur 2 fused numbers fused is: " << endl;
+    
+    cout << (x + y);
+    
+    cout << "rate mi 5 stars pls " ;
+    
+    return 0;
+    
+    }
+    else 
+    {
+    cout << "intruder why u here, go awai bai bai " ;
+    
+    return 0;
+    }
+    
+    
+    
+}
