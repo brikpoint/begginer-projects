@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+    
+    int number;
+   
+    cout << "Welcome to the even or odd number checker, this expensive complicated complex software checks if your inputed number is even or odd." << endl;
+    
+    cout << "Anyways, enter your number you want checked: " ;
+    
+    cin >> number;
+    
+    if (number % 2 == 0)
+    {
+        cout << "Your number is even." ;
+    }
+    else
+    {
+        cout << "Your number is odd." ;
+    }
+    return 0;
+}
