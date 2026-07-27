@@ -1,1 +1,2 @@
-This is my first project that I am proud of, coded in C++. It adds 2 numbers together. The password is 4. Coded on July 26th, 2026.
+My begginer projects.
+The 2 number fuser's password is 4.
