@@ -1,0 +1,51 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+
+
+int main() 
+{
+   int randomNumber;
+   int inputtedNumber;
+   int answer;
+   srand(time(nullptr));
+   randomNumber = rand() % 10 + 1;
+
+    cout << "Hello, welcome to rng game v2, its like the previous but you get attemps and I give hints, guess my number 1-10" << endl;
+    cout << "Enter your number: " ;
+    cin >> inputtedNumber;
+
+    while (inputtedNumber < 1 || inputtedNumber > 10)
+    {
+        if (inputtedNumber < 1)
+        {
+            cout << "Number too low, try again: " ;
+            cin >> inputtedNumber;
+        }
+        else
+        {
+            cout << "Number too high, try again: " ;
+            cin >> inputtedNumber;
+        }
+    }
+    while (inputtedNumber != randomNumber)
+    {
+        if (inputtedNumber > randomNumber)
+        {
+            cout << "Hint: Your number is too high, try again: " ;
+            cin >> inputtedNumber;
+        }
+        else
+        {
+            cout << "Hint: your number is too low, try again: " ;
+            cin >> inputtedNumber;
+        }
+    }
+    if  (inputtedNumber == randomNumber)
+    {
+        cout << "You won!" ;
+        return 0;
+    }
+}
