@@ -1,0 +1,87 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime> 
+using namespace std;
+
+bool playGame()
+{
+   int lives = 5;
+   int attempts = 0;
+   int randomNumber;
+   int inputtedNumber;
+   randomNumber = rand() % 10 + 1; //Makes random number 1-10
+
+    cout << "|||RNG GAME V3|||" << endl;
+    cout << "You have 5 lives. Enter your number 1-10: " ;
+    cin >> inputtedNumber;
+
+    while (inputtedNumber < 1 || inputtedNumber > 10)
+    {
+        if (inputtedNumber < 1)
+        {
+            cout << "Number too low, try again: " ;
+            cin >> inputtedNumber;
+        }
+        else
+        {
+            cout << "Number too high, try again: " ;
+            cin >> inputtedNumber;
+        }
+    }
+    while (inputtedNumber != randomNumber && lives > 0)
+    {
+        if (inputtedNumber > randomNumber)
+        {
+            lives--; //takes away life
+            attempts++; //add attempt
+            if (lives == 0)
+            {
+                break;
+            }
+            cout << "attempt:  " << attempts << " Lives: " << lives << " Hint: Your number is too high, try again: " ;
+            cin >> inputtedNumber;
+        }
+        else
+        {
+            lives--; //takes away life
+            attempts++; // add attempt
+            if (lives == 0)
+            {
+                break; //stops the loop if (condition == 0) 
+            }
+            cout << "attempt: " << attempts << " Lives: " << lives << " Hint: your number is too low, try again: " ;
+            cin >> inputtedNumber;
+        }
+    }
+    if  (inputtedNumber == randomNumber)
+    {
+        cout << "You won! " << endl;
+        return true; //sends secret intelligence to the int main() HQ
+    }
+    if (lives == 0)
+    {
+        cout << "You lost. " << endl;
+        return false;
+    }
+    return false;
+}
+
+int main() //head quarters
+{
+    srand(time(nullptr)); // Helps make stuff random
+    int wins = 0;
+    
+    char choice;
+
+    do //i dont know, i just know.
+    {
+        if (playGame())
+        {
+            wins++; //New shortcut, basically + 1 but its ++ and does the same thing.
+        }
+        cout << "Total wins: " << wins << endl;
+        cout << "Play again? (y/n): ";
+        cin >> choice;
+    }
+    while (choice == 'y' || choice == 'Y'); //someone told me this needs to be infront of the bracket above but i dont believe them so i put it here
+} 
